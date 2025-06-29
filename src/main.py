@@ -5,6 +5,10 @@ import os
 
 app = FastAPI()
 
+@app.get("/status")
+def get_status():
+    return {"status": "up", "version": os.getenv("IMAGE_TAG", "unknown")}
+
 @app.post("/proxmox-status")
 async def ping(request: Request):
     payload = await request.json()

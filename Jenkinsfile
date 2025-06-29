@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh '''
                     echo "Building Docker image..."
-                    docker build -t ${REGISTRY_URL}/${IMAGE_NAME}:${IMAGE_TAG} .
+                    docker build --build-arg IMAGE_TAG=${IMAGE_TAG} -t ${REGISTRY_URL}/${IMAGE_NAME}:${IMAGE_TAG} .
                 '''
             }
         }

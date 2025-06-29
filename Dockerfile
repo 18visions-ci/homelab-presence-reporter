@@ -1,5 +1,8 @@
 FROM python:3.11-slim
 
+ARG IMAGE_TAG
+ENV IMAGE_TAG=${IMAGE_TAG}
+
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
