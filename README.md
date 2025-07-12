@@ -60,9 +60,9 @@ The application requires the following environment variables to be set:
 To trigger a report, send a POST request to the `/proxmox-status` endpoint with a JSON payload containing the `user` and `device` names:
 
 ```bash
-curl -X POST http://localhost:8000/proxmox-status \
--H "Content-Type: application/json" \
--d '{"user": "test-user", "device": "test-device"}'
+curl -v https://presence-prod.iworksometimes.com/proxmox-status \
+  -H "Content-Type: application/json" \
+  -d '{"device": "mac mini", "user": "nick"}'
 ```
 
 ## Docker
